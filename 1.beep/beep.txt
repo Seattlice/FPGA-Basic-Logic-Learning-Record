@@ -1,0 +1,4 @@
+
+2024/5/16 Occurrence of basic buzzer tones Learned the contents of these two sections, completed the content of the buzzer, buzzer for the active and passive, passive need to drive themselves, active within the integrated circuit, this section for the passive buzzer to learn. The size of the buzzer sound lies in the duty cycle change, the pitch size lies in the frequency change, the occurrence of pwm wave can do both, mainly for different pitches occurring at different frequencies of the waveform, so as to do the buzzer change, more simple.
+
+学习了这两节内容，完成了蜂鸣器的内容，蜂鸣器为有源与无源，无源需要自行驱动，有源内有集成电路，本节对于无源蜂鸣器进行了学习。 蜂鸣器的声音大小在于占空比的改变，音调大小在于频率的改变，发生pwm波就可以做到两者，主要是针对不同音调发生不同频率的波形，从而做到蜂鸣器的变化，较为简单。
