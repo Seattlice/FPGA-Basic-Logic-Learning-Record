@@ -1,0 +1,24 @@
+Under Memories & Storage Elements, you can see that there are two entrances for RAM creation, one is Distributed Memory Generator, and the other is Block Memory Generator. The main difference between the two is that the FPGA resources occupied by the generated Core are not the same. The ROM/RAM Core generated from Distributed Memory Generator occupies LUT (lookup table, which is essentially a small RAM); the ROM/RAM Core generated from Block Memory Generator occupies Block Memory (embedded hardware RAM). The ROM/RAM Core generated from Block Memory Generator occupies Block Memory (embedded hardware RAM). This is similar to the ROM creation, user can choose the entry point according to the actual resource usage requirement.
+Port Type
+Single-port RAM: Read and write cannot be done at the same time.
+Simple Dual-Port RAM: There are two clocks, reading and writing can be done at the same time.
+True Dual-Port RAM: two ports, each with its own clock, address, input/output data ports, both ports can read/write.
+Read/Write Order
+Waveform in Write First mode, if only data is read out without simultaneous read/write of data, the data previously stored in the memory will be read out; if simultaneous read/write of data occurs, the data read out is the data just fed from the data bus, regardless of the data previously stored at the address.
+The waveform in Read First mode reads and writes to the same address at the same time, and the data read out is the data just written to the address before the last time, ignoring the effect of the event of writing data on the data read out.
+Waveform in No Change mode, the read data is only updated when reading but not writing, and the read data remains unchanged when reading and writing at the same time.
+Latentcy
+Latentcy refers to one or more clocks relative to the start bit of a clock before the data is valid, generally in units of clocks, which means the time interval between the clock acquisition to the read data address and the validity of the data.
+
+
+在 Memories & Storage Elements 下可以看到有两个与 RAM 创建的入口，一个是 Distributed Memory Generator，另一个是Block Memory Generator，两者最主要的差别是生 成的Core所占用的FPGA资源不一样，从Distributed Memory Generator生成的 ROM/RAM Core占用的资源是LUT（查找表，查找表本质就是一个小的RAM）； 从Block Memory Generator生成的 ROM/RAM Core占用的资源是Block Memory （嵌入式的硬件RAM）。这个就和ROM创建类似，用户根据实际资源使用需求 选择创建的入口。
+端口类型
+单端口RAM：读写不能同时进行。
+简单双端口RAM：有两个时钟，可以同时进行读写。
+真双端口 RAM：两个 PORT，分别有自己的时钟，地址，输入/输出数 据端口，两个端口均可进行读写操作。
+读写顺序
+Write First 模式下的波形，如果仅读出数据而未发生数据的同时读写，则读 出存储器以前存储的数据，如果发生数据的同时读写，读出数据为刚从数据总线送入的数据，而不考虑该地址以前存储的数据。
+Read First 模式下的波形，同时对同一地址读写，读出数据为上次刚写入该 地址以前的数据，忽略正在写数据这一事件对读出数据的影响。
+No Change模式下波形，读出的数据只有在进行读操作但未进行写操作时更 新数据，在同时读写数据时，读出数据保持不变。
+Latentcy
+Latentcy指的是相对于某个时钟起始位的1个或多个时钟后数据才有效，一般以时钟为单位，这里表示的是时钟采集 到读数据地址到数据有效的时间间隔。
